@@ -12,6 +12,9 @@ class EthereumBlockie extends GluonElement {
           border-radius: 50%;
           border: 1px solid #00000050;
         }
+        ::slotted(canvas) {
+          vertical-align: bottom;
+        }
       </style>
       <slot></slot>
     `;
