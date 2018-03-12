@@ -9,6 +9,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "cordova": "^8.0.0",
     "gluonjs": "^2.2.0"
   },
   "devDependencies": {
