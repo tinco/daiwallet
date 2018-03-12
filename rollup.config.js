@@ -45,6 +45,6 @@ function getConfig({ name, input, dest, format, uglified = false, transpiled = f
   };
 }
 
-const config = [getConfig({ name: 'DaiWallet', input: 'src/index.js', dest: './index.js', format: 'es', transpiled: false, uglified: false })];
+const config = [getConfig({ name: 'DaiWallet', input: 'src/index.js', dest: './dist/index.js', format: 'iife', transpiled: false, uglified: false })];
 
 export default config;

@@ -14,6 +14,25 @@ test:
 build:
 	docker run -it --rm -v $$PWD:/app ruphin/webdev npm run build
 
+.PHONY: build-cordova
+build-cordova: build
+	cp cordova-index.html dist/index.html
+	docker run -it --rm --privileged \
+		-v /dev/bus/usb:/dev/bus/usb \
+		-v $$PWD/DaiWalletCordova:/src \
+		-v $$PWD/dist:/src/www \
+		tinco/cordova cordova build
+	cp $$PWD/DaiWalletCordova/platforms/android/app/build/outputs/apk/debug/app-debug.apk apk/
+
+.PHONY: run-cordova
+run-cordova: build
+		cp cordova-index.html dist/index.html
+		docker run -it --rm --privileged \
+			-v /dev/bus/usb:/dev/bus/usb \
+			-v $$PWD/DaiWalletCordova:/src \
+			-v $$PWD/dist:/src/www \
+			tinco/cordova cordova run
+
 .PHONY: publish
 publish:
 	docker run -v $$PWD:/app \
