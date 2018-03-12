@@ -36,8 +36,13 @@
         <title>DaiWallet</title>
     </head>
     <body>
-        <my-app></my-app>
-        <script src="cordova.js"></script>
+        <script>
+          window.OnCordova = true;
+        </script>
+
         <script src="./index.js"></script>
+        <app-element></app-element>
+
+        <script src="cordova.js"></script>
     </body>
 </html>
