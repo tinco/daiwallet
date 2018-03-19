@@ -26,7 +26,7 @@ class AccountsPage extends GluonElement {
           account => account.address,
           account => html`
             <div>
-              <ethereum-blockie address=${account.address}></ethereum-blockie> <span class="address">${account.address}${account.owned ? ' 🔓' : ''}</span> 
+              <ethereum-blockie address=${account.address}></ethereum-blockie> <span class="address">${account.address}${account.owned ? ' 🔓' : ''}</span>
             </div>
           `
         )}
